@@ -1,0 +1,20 @@
+h1 {text-align: center;
+    font-size: 40px;
+    color: orangered;}
+
+div img { margin-left: 20px;
+      width: 20%;
+      height: 200px;
+    }
+h3 {text-align: center;}
+
+#directions {text-align: center;
+            background-color: silver;}
+
+#randomnumber {text-align: center;}
+
+#totalsofar {text-align: center;
+             color: orange;}
+
+#stats { text-align: center;
+        background-color: silver;}

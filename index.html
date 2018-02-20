@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <LINK REL=StyleSheet HREF="assets/css/style.css" TYPE="text/css" MEDIA=screen>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="assets/javascript/game.js"></script>
  
 </head>
@@ -21,16 +21,16 @@
         <p>The value of each crystal is hidden from you until you click on it.</p>
         <p>Each time the game starts, the value of each crystal will change.</p>
     </div>
-    <div id="crystals">
-       
-        <img src ="assets/images/greencrystal.jpg" id="green">
-        <img src="assets/images/bluecartooncrystal.png" id="blue">
-        <img src="assets/images/specialredcrystal.png" id="red">
-        <img src="assets/images/yellowcartooncrystal.png" id="yellow">
+    <div id ="crystals">
+        <img class "crystal-image" id="green" src ="assets/images/greencrystal.jpg" data-crystalvalue ="green">
+        <img class "crystal-image"  id="blue" src ="assets/images/bluecartooncrystal.png" data-crystalvalue = "blue">
+        <img class "crystal-image"  id= "red" src ="assets/images/specialredcrystal.png" data-crystalvalue ="red">
+        <img class "crystal-image"  id= "yellow" src ="assets/images/yellowcartooncrystal.png" data-crystalvalue ="yellow">
     </div>
     <br></br>
     <div class = rand>
-    <h2 id ="randomnumber">Random Number:</h2>
+    <h2 id ="randomNumber"> Random Number:</h2>
+    
     </div>    
     <h2 id ="totalsofar">Your Total so Far:</h2>
         

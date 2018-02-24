@@ -21,7 +21,13 @@ console.log("yellow" + yellow + "");
 console.log("red" + red + "");
 console.log("blue" + blue + "");
 
-var counter =0;
+var counter = 0;
+var wins = 0;
+var losses = 0;
+$("#wins").text("Wins: " + wins);
+$("losses").text("Losses: " + losses); //not running on screen?
+$("#totalsofar").text("Your Total so Far: " +counter);
+
 var numberOptions = [blue, red, yellow,];  //add green when green works
 for (var i = 0; i < numberOptions.length; i++) {
     var imageCrystal = $("<img>");
@@ -43,11 +49,35 @@ $("#blue").on("click", function() {
     console.log("new blue counter" + counter);
     if (counter ===randomNumber) {
         yay();
-    if (counter> randomNumber) {
+    }
+    else if (counter> randomNumber) {
         loser();
     }
+})
+
+$("#red").on("click", function() {
+    counter = counter + red;
+    console.log("new red counter" + counter);
+    if(counter === randomNumber) {
+        yay();
+    }
+    else if (counter > randomNumber) {
+        loser();
+    }
+    }) 
+
+$("#yellow").on("click", function() {
+    counter = counter + yellow;
+    console.log("new yellow counter" + counter);
+    if(counter === randomNumber) {
+        yay();
+    }
+    else if (counter > randomNumber) {
+        loser();
     }
 })
+    
+
 //var imageCrystal = $("<img>"); //not sure about including all images in one line-
 //imageCrystal.attr("src","assets/images/greencrystal.jpg", "assets/images/bluecartooncrystal.png", "assets/images/specialredcrystal.png", "yellowcartooncrystal.png");
 
@@ -60,13 +90,13 @@ $("img").on("click", function() {
 var crystalValue = ($(this).attr("data-crystalvalue"));
 crystalValue = parseInt(crystalValue);
 counter =+ crystalValue;
-alert("new score" + counter); //alerting new score, but counter not working -change to Your total so far
+//alert("new score" + counter); //alerting new score, but counter not working -change to Your total so far
 if (counter === randomNumber) {
     alert("you win"); //change to update text on page
 
 }
 else if (counter>= randomNumber) {
-    alert("you lose"); //change to update text on page
+   // alert("you lose"); //change to update text on page
 }
 })
 });

@@ -11,7 +11,7 @@ console.log("random" + randomNumber + "");
 $("#randomNumber").text("Target Number: " + randomNumber); 
 
 // assigns a value between 1-12 to each crystal
-//var green = Math.floor(Math.random()*12)+1);  I don't know why green isn't working
+//var green = Math.floor(Math.random()*12)+1);  //I don't know why green isn't working
 var blue = Math.floor((Math.random()*12)+1);
 var red = Math.floor((Math.random()*12)+1);
 var yellow = Math.floor((Math.random()*12)+1);
@@ -25,14 +25,33 @@ console.log("blue" + blue + "");
 var counter = 0;
 var wins = 0;
 var losses = 0;
-$("#wins").text("Wins: " + wins);
-$("losses").text("Losses: " + losses); //not running on screen?
-$("#totalsofar").text("Your Total so Far: " +counter);
 
-var numberOptions = [blue, red, yellow,];  //add green when green works
-for (var i = 0; i < numberOptions.length; i++) {
-    var imageCrystal = $("<img>");
-    imageCrystal.addClass("crystal-image"); 
+ 
+//$("#totalsofar").text("Your Total so Far: " + counter); //counter not working -need to move into function
+
+
+// counts wins and loses
+function yay() {
+    if (counter === randomNumber);
+    wins++;
+        $("#wins").text("Wins: " + wins);
+    reset();
+}
+function boo() {
+    if (counter > randomNumber);
+    losses++;
+        $("#losses").text("Losses: " + losses);
+     reset()
+}
+// not sure I need this
+function reset() {
+    randomNumber = Math.floor((Math.random() * 120) + 19);
+    blue = Math.floor((Math.random()*12)+1);
+    red = Math.floor((Math.random()*12)+1);
+    yellow = Math.floor((Math.random()*12)+1);
+    counter = 0;
+   
+
 }
 $("#green").on("click", function() {
     counter = counter + green; 
@@ -41,7 +60,8 @@ $("#green").on("click", function() {
         yay();
     }
     else if (counter > randomNumber) {
-        loser();
+        boo();
+
     }
 })
 
@@ -52,7 +72,7 @@ $("#blue").on("click", function() {
         yay();
     }
     else if (counter> randomNumber) {
-        loser();
+        boo();
     }
 })
 
@@ -63,35 +83,31 @@ $("#red").on("click", function() {
         yay();
     }
     else if (counter > randomNumber) {
-        loser();
+        boo();
     }
     }) 
 
 $("#yellow").on("click", function() {
+    
     counter = counter + yellow;
     console.log("new yellow counter" + counter);
     if(counter === randomNumber) {
-        yay();
+       yay();
     }
     else if (counter > randomNumber) {
-        loser();
+        boo();
     }
 })
     
 
-//var imageCrystal = $("<img>"); //not sure about including all images in one line-
-//imageCrystal.attr("src","assets/images/greencrystal.jpg", "assets/images/bluecartooncrystal.png", "assets/images/specialredcrystal.png", "yellowcartooncrystal.png");
-
-//imageCrystal.data("data-crystalvalue", numberOptions[i]);
-
-$("img").on("click", function() { 
+$("img").on("click", function() { //  when I remove this,or change it, I get a bunch of syntax errors, so I'm leaving it alone
     console.log ("click"); 
-
-    ///haven't looked at this part yet -from basic crystal game-
-var crystalValue = ($(this).attr("data-crystalvalue"));
-crystalValue = parseInt(crystalValue);
-counter =+ crystalValue;
-//alert("new score" + counter); //alerting new score, but counter not working -change to Your total so far
+$("#totalsofar").text("Your Total so Far: " + counter);
+    ///the game doesn't reset after a win or loss-
+//wins and losses don't go up because you have to reset the game
+//the green crystal doesn't work, so if you click on it, it returns a weird output in the total so far field
+//
+//the alerts below aren't doing anything, but if I take them away, the syntax gets all messed up.
 if (counter === randomNumber) {
     alert("you win"); //change to update text on page
 

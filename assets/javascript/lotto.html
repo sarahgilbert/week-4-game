@@ -1,0 +1,43 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Added a link to Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    
+
+
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class= "jumbotron">
+        <h1>Generate a Random Number!</h1>
+        <button>press here</button>
+        
+    </div>
+    
+    <div id= "number">
+
+    </div>
+    <script type ="text/javascript">
+        $("button").on("click", function() {
+           var banana = $("<div></div>");
+           var rando =[]
+           for ( i=0; i<9; i++){ 
+            rando.push(Math.floor((Math.random() * 9) +1));
+            
+           }
+           banana.append(rando);
+           $("#number").append(banana);
+           
+           
+        })
+    
+    </script>
+</body>
+</html>
